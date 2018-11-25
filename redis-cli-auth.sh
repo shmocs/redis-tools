@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source config.sh
+source ~/redis-tools/config.sh
 
 #sudo ln -s /home/$user/redis-tools/redis-cli-auth.sh /usr/bin/redis-cli-auth
 #now from anywhere you can use `redis-cli-auth`
