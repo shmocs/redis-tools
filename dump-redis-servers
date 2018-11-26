@@ -1,0 +1,20 @@
+#!/bin/bash
+
+source config
+
+# If run like "./dump-redis-servers server1" -> then use server1; else use the predefined servers
+if [ "$1" != "" ]; then
+        redis_servers=$1
+else
+        redis_servers=$servers
+fi
+
+
+NOW=$(date +"%Y%m%d-%H%M%S")
+
+for _redis in "${redis_servers[@]}"
+do
+	ssh $_redis "/home/$user/redis-tools/save-redis-dump"
+	scp $_redis:/home/$user/redis-bkp/dump.tgz ~/redis-bkp/dump_${_redis}_$NOW.tgz
+done
+

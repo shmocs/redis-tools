@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source config
+
+echo save | redis-cli -a $pass
+
+mkdir -p ~/redis-bkp
+tar czvf ~/redis-bkp/dump.tgz -C /var/lib/redis dump.rdb
