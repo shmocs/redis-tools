@@ -1,0 +1,1 @@
+redis-cli --scan --pattern 'zeroclassic*' | xargs redis-cli del
