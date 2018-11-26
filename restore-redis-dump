@@ -7,3 +7,7 @@ sudo cp ~/redis-bkp/dump.rdb /var/lib/redis/
 sudo chown redis.redis /var/lib/redis/dump.rdb
 sudo chmod 644 /var/lib/redis/dump.rdb
 sudo service redis start
+
+
+#sleep 2
+#echo 'CONFIG SET protected-mode no' | redis-cli
