@@ -1,5 +1,3 @@
 #!/bin/bash
 
-user="equihub"
 pass="s1djunsw5pgbodthbrq9zGeEyKzDVvpSTEF"
-servers=("redis-btg" "redis-zen" "redis-zcl" "redis-kmd" "redis-bth")
