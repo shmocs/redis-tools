@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source config
+source ~/redis-tools/config
 
 # If run like "./dump-redis-servers server1" -> then use server1; else use the predefined servers
 if [ "$1" != "" ]; then
