@@ -6,7 +6,7 @@ source config
 if [ "$1" != "" ]; then
         redis_servers=$1
 else
-        redis_servers=$servers
+        redis_servers=(${servers[@]})
 fi
 
 
@@ -14,6 +14,7 @@ NOW=$(date +"%Y%m%d-%H%M%S")
 
 for _redis in "${redis_servers[@]}"
 do
+	echo "Dumping [$_redis] server ..."
 	ssh $_redis "/home/$user/redis-tools/save-redis-dump"
 	scp $_redis:/home/$user/redis-bkp/dump.tgz ~/redis-bkp/dump_${_redis}_$NOW.tgz
 done
